@@ -13,7 +13,7 @@ mongoClient.connect().then(async () => {
   console.log("Connected to mongodb");
   app.use(
     "/api/recipes",
-    RecipesApi(mongoClient.db(process.env.MONGODB_DATABASE))
+    RecipesApi(mongoClient.db("recipes"))
   );
 });
 

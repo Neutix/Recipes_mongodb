@@ -16,8 +16,6 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 
 function FrontPage() {
@@ -79,7 +77,7 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function RecipeReviewCard({
-  recipe: { _id, name, type, recipeType, time, topText, img },
+  recipe: { _id, name, type, topText, img }
 }) {
   const [expanded, setExpanded] = React.useState(false);
 
