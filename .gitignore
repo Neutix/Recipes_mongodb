@@ -2,3 +2,7 @@
 /client/node_modules/
 /node_modules/
 /server/node_modules/
+/client/.parcel-cache/
+/client/dist/
+/server/.env
+/.idea/
