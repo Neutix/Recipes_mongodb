@@ -14,9 +14,7 @@ export function RecipesApi(mongoDatabase) {
           type,
           recipeType,
           time,
-          difficulty,
           topText,
-          ingredients,
           img,
         }) => ({
           _id,
@@ -24,13 +22,11 @@ export function RecipesApi(mongoDatabase) {
           type,
           recipeType,
           time,
-          difficulty,
           topText,
-          ingredients,
           img,
         })
       )
-      .limit(10)
+      .limit(100)
       .toArray();
     res.json(recipe);
   });
