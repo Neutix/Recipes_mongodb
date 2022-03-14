@@ -153,10 +153,6 @@ export default function RecipeReviewCard({
   );
 }
 
-function FavoriteIcon() {
-  console.log("Favorite");
-}
-
 function ListRecipes() {
   const { loading, error, data } = useLoading(async () =>
     fetchJSON("/api/recipes")
