@@ -3,18 +3,17 @@ import * as path from "path";
 import { RecipesApi } from "./recipesApi.js";
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
+import bodyParser from "body-parser";
 
 dotenv.config();
 
 const app = express();
+app.use(bodyParser.json());
 
 const mongoClient = new MongoClient(process.env.MONGODB_URL);
 mongoClient.connect().then(async () => {
   console.log("Connected to mongodb");
-  app.use(
-    "/api/recipes",
-    RecipesApi(mongoClient.db("recipes"))
-  );
+  app.use("/api/recipes", RecipesApi(mongoClient.db("recipes")));
 });
 
 app.use(express.static("../client/dist/"));
